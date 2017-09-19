@@ -12,7 +12,7 @@ import {
 } from './reducer'
 
 const defaultState = { country: 'France' }
-const move1: ActionFunctionAny<any> = createAction('MOVE')
+const move1: any = createAction('MOVE')
 const r1 = createReducer({
   [move1]: state => ({ ...state, country: 'Italy' })
 }, defaultState)
@@ -28,9 +28,9 @@ test('createSelectors', () => {
     'b',
     'aa'
   ])
-  expect(selectors.getA()).toBe('a')
-  expect(selectors.getB()).toBe('b')
-  expect(selectors.getAa()).toBe('aa')
+  expect(selectors.getA({})).toBe('a')
+  expect(selectors.getB({})).toBe('b')
+  expect(selectors.getAa({})).toBe('aa')
 })
 
 test('reduce to nextState', () => {

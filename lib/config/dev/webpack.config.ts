@@ -13,7 +13,7 @@ const config: Configuration = smart(sharedConfig, {
 
   output: {
     path: dstPath,
-    library: 'ReduxedTree',
+    library: 'ReduxedActions',
     libraryTarget: 'commonjs2',
     filename: 'build.js'
   },

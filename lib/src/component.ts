@@ -8,18 +8,17 @@ import {
   DispatchProp,
   InferableComponentEnhancer,
   InferableComponentEnhancerWithProps,
-  MapDispatchToPropsParam,
-  MapStateToPropsParam
+  MapDispatchToPropsParam
 } from 'react-redux'
 import {
   Selector
 } from 'reselect'
 
-interface ComponentOutput {
+export interface ComponentOutput {
   output: ActionCreatorsMapObject
 }
 
-interface ComponentInput {
+export interface ComponentInput {
   input: Selector<any, any>
 }
 
@@ -28,7 +27,7 @@ export const createDispatcher = (actions: ActionCreatorsMapObject): MapDispatchT
     output: bindActionCreators(actions, dispatch)
   })
 
-export const createInput = (selector: Selector<any, any> = state => state): MapStateToPropsParam<any, any> =>
+export const createInput = (selector: Selector<any, any> = state => state) =>
   (state: any): ComponentInput => ({
     input: selector(state)
   })

@@ -41,8 +41,7 @@ const config: Configuration = {
   },
 
   plugins: [
-    new optimize.ModuleConcatenationPlugin(),
-    new EnvironmentPlugin(['NODE_ENV'])
+    new optimize.ModuleConcatenationPlugin()
   ],
 
   target: 'web'
