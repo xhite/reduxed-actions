@@ -1,4 +1,7 @@
-import { Configuration } from 'webpack'
+import {
+  Configuration,
+  EnvironmentPlugin
+} from 'webpack'
 
 import {
   optimize
@@ -38,7 +41,8 @@ const config: Configuration = {
   },
 
   plugins: [
-    new optimize.ModuleConcatenationPlugin()
+    new optimize.ModuleConcatenationPlugin(),
+    new EnvironmentPlugin(['NODE_ENV'])
   ],
 
   target: 'web'
