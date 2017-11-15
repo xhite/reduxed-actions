@@ -22,7 +22,7 @@ export interface ComponentInput {
   input: Selector<any, any>
 }
 
-export const createDispatcher = (actions: ActionCreatorsMapObject): MapDispatchToPropsParam<any, any> =>
+export const createDispatcher = (actions: ActionCreatorsMapObject = {}): MapDispatchToPropsParam<any, any> =>
   (dispatch: Dispatch<any>): ComponentOutput => ({
     output: bindActionCreators(actions, dispatch)
   })

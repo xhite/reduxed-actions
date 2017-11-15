@@ -1,2 +1,4 @@
-export { connect } from './component'
+export * from './actions'
+export * from './component'
 export * from './reducer'
+export * from './selectors'

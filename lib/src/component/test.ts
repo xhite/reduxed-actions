@@ -1,9 +1,11 @@
 import { createAction } from 'redux-actions'
 
 import {
+  connect,
   createDispatcher,
   createInput
-} from './component'
+} from './lib'
+
 
 test('createInput', () => {
   const select1 = createInput()
@@ -43,4 +45,5 @@ test('connect', () => {
   expect(Object.keys(output).length).toBe(2)
   expect(output.a()).toBe('A')
   expect(output.b()).toBe('B')
+  expect(typeof connect({})).toBe('function')
 })

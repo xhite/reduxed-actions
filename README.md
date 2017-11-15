@@ -193,7 +193,7 @@ const reducer = handleActions({
   
 const namedActions = createWrapperActions(creators, 'friend')
   
-const namedReducer = createWrapperReducer(reducer, namedActions)
+const namedReducer = createWrapperReducer({ actions: namedActions, reducer })
 
 namedReducer({ lastName: 'Doe' }, namedActions.changeLastName('Dupont')) // => { lastName: 'Dupont' }
 ```
