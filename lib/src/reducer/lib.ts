@@ -1,22 +1,16 @@
 import {
-  ActionCreatorsMapObject,
-} from 'redux'
-import {
   handleActions,
   Action,
   Reducer,
   ReducerMap
 } from 'redux-actions'
+
 import { combineWrapperActions } from '../actions'
+import {
+  ReducerActions,
+  ReducerActionsMapObject
+} from './types'
 
-export interface ReducerActions {
-  actions: ActionCreatorsMapObject
-  reducer: Reducer<any, any>
-}
-
-export interface ReducerActionsMapObject {
-  [name: string]: ReducerActions
-}
 
 export const createReducer = (reducerMap: ReducerMap<any, any>, defaultState: any, childReducerMap: ReducerActionsMapObject = {}): Reducer<any, any> =>
   handleActions({

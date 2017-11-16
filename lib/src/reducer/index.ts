@@ -3,3 +3,5 @@ export {
   createWrapperReducer,
   getInitialState
 } from './lib'
+
+export * from './types'

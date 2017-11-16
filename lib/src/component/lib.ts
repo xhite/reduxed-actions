@@ -13,14 +13,11 @@ import {
 import {
   Selector
 } from 'reselect'
+import {
+  ComponentInput,
+  ComponentOutput
+} from './types'
 
-export interface ComponentOutput {
-  output: ActionCreatorsMapObject
-}
-
-export interface ComponentInput {
-  input: Selector<any, any>
-}
 
 export const createDispatcher = (actions: ActionCreatorsMapObject = {}): MapDispatchToPropsParam<any, any> =>
   (dispatch: Dispatch<any>): ComponentOutput => ({

@@ -3,9 +3,8 @@ import {
   Selector
 } from 'reselect'
 
-export interface SelectorsMapObject {
-  [key: string]: Selector<any, any>
-}
+import { SelectorsMapObject } from './types'
+
 
 /* creates wrapper selectors:
   * inputs: parent selector, object containing root selector functions

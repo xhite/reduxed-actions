@@ -1,6 +1,5 @@
 import {
-  Configuration,
-  EnvironmentPlugin
+  Configuration
 } from 'webpack'
 
 import {
